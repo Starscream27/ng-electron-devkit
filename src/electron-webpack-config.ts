@@ -10,5 +10,8 @@ export const electronConfig = {
                 use: 'node-loader'
             }
         ]
+    },
+    externals: {
+        sharp: 'commonjs sharp'
     }
 };
