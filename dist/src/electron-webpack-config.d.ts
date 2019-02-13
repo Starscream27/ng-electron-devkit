@@ -9,7 +9,12 @@ export declare const electronConfig: {
             use: string;
         }[];
     };
-    externals: {
+    externals: ({
         sharp: string;
-    };
+        leveldown?: undefined;
+    } | {
+        leveldown: string;
+        sharp?: undefined;
+    })[];
+    plugins: any[];
 };

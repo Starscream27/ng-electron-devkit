@@ -1,3 +1,5 @@
+const DefinePlugin = require('webpack/lib/DefinePlugin');
+
 export const electronConfig = {
     target: 'electron-renderer',
     node: {
@@ -11,7 +13,13 @@ export const electronConfig = {
             }
         ]
     },
-    externals: {
-        sharp: 'commonjs sharp'
-    }
+    externals: [
+        { sharp: 'commonjs sharp' },
+        { leveldown: 'require("leveldown")' }
+    ],
+    plugins: [
+        new DefinePlugin({
+            'process.env.FLUENTFFMPEG_COV': false
+        }),
+    ]
 };
