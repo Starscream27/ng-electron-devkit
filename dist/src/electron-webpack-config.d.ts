@@ -9,4 +9,7 @@ export declare const electronConfig: {
             use: string;
         }[];
     };
+    externals: {
+        sharp: string;
+    };
 };
